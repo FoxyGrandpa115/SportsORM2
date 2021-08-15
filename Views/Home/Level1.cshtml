@@ -1,0 +1,219 @@
+<div class="card">
+    <div class="card-header bg-dark text-light">Level 1</div>
+    <div class="card-body">
+        <p>Using the SportsORM, complete all the following queries and show their results on Level1.cshtml.</p>
+        <ol>
+            <li>...all womens' leagues
+                @{
+                    foreach (var league in ViewBag.WomensLeague)
+                    {
+                        <ul>
+                            <li>@league.Name</li>
+                        </ul>
+                    }
+                }
+            </li>
+            <li>...all leagues where sport is any type of hockey
+                @{
+                    foreach (var league in ViewBag.HockeyLeague)
+                    {
+                        <ul>
+                            <li>@league.Name</li>
+                        </ul>
+                        
+                    }
+                }
+            </li>
+            <li>...all leagues where sport is something OTHER THAN football
+                <select>
+                @{
+                    foreach (var league in ViewBag.NonFootballLeague)
+                    {
+                        
+                        <option value="@ViewBag.LeagueID">@league.Name</option>
+                        
+                        
+                    }
+                }
+
+                </select>
+            </li>
+            <li>...all leagues that call themselves "conferences"
+                <select>
+                @{
+                    foreach (var league in ViewBag.ConferenceLeagues)
+                    {
+                        
+                        <option value="@ViewBag.LeagueID">@league.Name</option>
+                        
+                        
+                    }
+                }
+
+                </select>
+            </li>
+            <li>...all leagues in the Atlantic region
+                <select>
+                @{
+                    foreach (var league in ViewBag.AtlanticLeagues)
+                    {
+                        
+                        <option value="@ViewBag.LeagueID">@league.Name</option>
+                        
+                        
+                    }
+                }
+
+                </select>
+
+            </li>
+            <li>...all teams based in Dallas
+                <select>
+                @{
+                    foreach (var team in ViewBag.DallasTeams)
+                    {
+                        
+                        <option value="@ViewBag.TeamID">@team.TeamName</option>
+                        
+                        
+                    }
+                }
+
+                </select>
+
+            </li>
+            <li>...all teams named the Raptors
+                @{
+                    foreach (var team in ViewBag.TeamRaptors)
+                    {
+                        
+                        <h4>@team.Location : @team.TeamName</h4>
+                        
+                        
+                    }
+                }
+
+            </li>
+            <li>...all teams whose location includes "City"
+                <select>
+                @{
+                    foreach (var team in ViewBag.HaveCityInName)
+                    {
+                        
+                        <option value="@ViewBag.TeamID">@team.TeamName</option>
+                        
+                        
+                    }
+                }
+
+                </select>
+
+            </li>
+            <li>...all teams whose names begin with "T"
+                <select>
+                @{
+                    foreach (var team in ViewBag.StartWithT)
+                    {
+                        
+                        <option value="@ViewBag.TeamID">@team.TeamName</option>
+                        
+                        
+                    }
+                }
+
+                </select>
+
+            </li>
+            <li>...all teams, ordered alphabetically by location
+                <select>
+                @{
+                    foreach (var team in ViewBag.AlphaLocation)
+                    {
+                        
+                        <option value="@ViewBag.TeamID">@team.Location</option>
+                        
+                        
+                    }
+                }
+
+                </select>
+
+            </li>
+            <li>...all teams, ordered by team name in reverse alphabetical order
+                <select>
+                @{
+                    foreach (var team in ViewBag.ReverseOrder)
+                    {
+                        
+                        <option value="@ViewBag.TeamID">@team.TeamName</option>
+                        
+                        
+                    }
+                }
+
+                </select>
+
+            </li>
+            <li>...every player with last name "Cooper"
+                <select>
+                @{
+                    foreach (var player in ViewBag.CooperPlayers)
+                    {
+                        
+                        <option value="@ViewBag.PlayerID">@player.FirstName</option>
+                        
+                        
+                    }
+                }
+
+                </select>
+
+            </li>
+            <li>...every player with first name "Joshua"
+                <select>
+                @{
+                    foreach (var player in ViewBag.JoshuaPlayers)
+                    {
+                        
+                        <option value="@ViewBag.PlayerID">@player.LastName, @player.FirstName </option>
+                        
+                        
+                    }
+                }
+
+                </select>
+
+            </li>
+            <li>...every player with last name "Cooper" EXCEPT those with "Joshua" as the first name
+                <select>
+                @{
+                    foreach (var player in ViewBag.CooperNotJoshua)
+                    {
+                        
+                        <option value="@ViewBag.PlayerID">@player.LastName, @player.FirstName </option>
+                        
+                        
+                    }
+                }
+
+                </select>
+
+            </li>
+            <li>...all players with first name "Alexander" OR first name "Wyatt"
+                <select>
+                @{
+                    foreach (var player in ViewBag.AlexanderOrWyatt)
+                    {
+                        
+                        <option value="@ViewBag.PlayerID">@player.FirstName, @player.LastName </option>
+                        
+                        
+                    }
+                }
+
+                </select>
+                
+            </li>
+        </ol>
+    </div>
+</div>

@@ -1,0 +1,70 @@
+<div class="card">
+    <div class="card-header bg-dark text-light">Level 2</div>
+    <div class="card-body">
+        <p>Using the SportsORM, complete all the following queries and show their results on Level2.cshtml.</p>
+        <ol>
+            <li>...all teams in the Atlantic Soccer Conference
+                <ul>
+                @foreach(var item in ViewBag.ASC)
+                    {
+                        <li>@item.Location @item.TeamName</li>
+
+                    } 
+                </ul>
+            </li>
+            <li>...all (current) players on the Boston Penguins (Hint: Boston is the Location, Penguins is the TeamName)<ul>
+                @foreach(var item in ViewBag.Boston)
+                    {
+                        <li> @item.FirstName @item.LastName </li>
+
+                    } 
+                </ul></li>
+            <li>...all (current) players in the International Collegiate Baseball Conference <select>
+                @foreach(var item in ViewBag.PlayersFromICBC)
+                    {
+                        <option value="@ViewBag.LeagueID">@item.FirstName @item.LastName</option>
+
+                    } 
+                </select></li>
+            <li>...all (current) players in the American Conference of Amateur Football with last name "Lopez"<ul>
+                @foreach(var item in ViewBag.LopezACAF)
+                    {
+                       @if(ViewBag.LopezACAF = null)//if statement doesnt seem to work
+                       {
+                           <li>No players found.</li>
+                       } 
+                        <li> @item.FirstName @item.LastName </li> 
+                    }<br>
+                    <p>The list is empty.</p>
+                </ul></li>
+            <li>...all football players <select>
+                @foreach(var item in ViewBag.FootballPlayers)
+                    {
+                        <option value="@ViewBag.LeagueID">@item.FirstName @item.LastName</option>
+
+                    } 
+                </select></li>
+            <li>...all teams with a (current) player named "Sophia"<ul>
+                @foreach(var item in ViewBag.TeamsWSophia)
+                    {
+                        <li> @item.Location @item.TeamName </li>
+
+                    } 
+                </ul></li>
+            <li>...all leagues with a (current) player named "Sophia" <ul>
+                @foreach(var item in ViewBag.LeaguesWSophia)
+                    {
+                        <li> @item.Name </li>
+
+                    } 
+                </ul></li>
+            <li>...everyone with the last name "Flores" who DOESN'T (currently) play for the Washington Roughriders<ul>
+                @foreach(var item in ViewBag.FloresNoRoughRiders)
+                    {
+                        <li> @item.FirstName @item.LastName </li>
+
+                    } 
+                </ul></li>
+        </ol>
+    </div>
+</div>
